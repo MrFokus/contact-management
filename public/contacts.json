@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Иван Иванов",
+    "tel": "+7 (918) 296 27 56",
+    "mail": "ivanov@example.com"
+  },
+  {
+    "id": 2,
+    "name": "Петр Петров",
+    "tel": "+7 (999) 000 22 33",
+    "mail": "petrov@example.com"
+  }
+]

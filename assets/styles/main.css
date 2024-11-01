@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 :root{
-    --bg-page:#c7ffed;
+    --bg-page:#d1ebe2;
     --bg-content:#fafafa;
     --text-primary-color: #0e0e0e;
+    --outside:#0e0e0e2a;
+    --primary: #1470e9;
 }
 
 *{
@@ -13,4 +15,23 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
+}
+
+main,html,body,#__nuxt{
+    @apply w-full min-h-[100dvh];
+}
+main{
+    @apply bg-bg-page;
+}
+.input-container{
+    @apply flex flex-col gap-2
+}
+input{
+    @apply border border-solid border-2 border-gray-100 rounded-lg px-3 py-2;
+}
+button.clear{
+    @apply  border border-solid border-2 border-gray-100 rounded-lg p-3 text-text-primary-color flex-1;
+}
+button.primary{
+    @apply bg-primary rounded-lg active:bg-blue-700 p-3 text-white flex-1;
 }

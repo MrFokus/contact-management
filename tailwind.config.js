@@ -13,7 +13,9 @@ export default {
       colors:{
         "bg-page":"var(--bg-page)",
         "bg-content":"var(--bg-content)",
-        "text-primary-color": "var(--text-primary-color)"
+        "text-primary-color": "var(--text-primary-color)",
+        "outside":"var(--outside)",
+        "primary":"var(--primary)"
       }
     },
   },
