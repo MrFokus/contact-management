@@ -1,75 +1,40 @@
-# Nuxt Minimal Starter
+# Глубоков Герман. Тестовое задание 
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Make sure to install dependencies:
+## Для установки и запуска
 
 ```bash
-# npm
-npm install
+git clone https://github.com/MrFokus/contact-management.git
 
-# pnpm
-pnpm install
+cd contact-management/
 
-# yarn
-yarn install
+#node v20
+npm i
 
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
+После чего перейдите по адресу http://localhost:3000/
 
-## Production
+## Описание 
 
-Build the application for production:
+Я решил пойти не совсем простым путём - постарался сделать проект немного маштабируемым через универсальные(переиспользуемые) компоненты.
+По архитектуре что-то напоминающее FSD, но не такое "раздутое".
 
-```bash
-# npm
-npm run build
+Немного запутался с ТЗ: конкретно с 6 и 7 пунктами, так как не понятно как можно использовать и тестовые данные, и получение из localStorage, и функции по работе с API. Сначала я думал, сделать через Nuxt сервер, но там нет доступа к localStorage.  
+Но я решил сделать так:
++ Есть файл в public под названием contacts.json, там лежат тестовые данные, которые при загрузке страницы подтягиваются через $fetch в localStorage, если localStorage пустой.
++ После идёт взаимодействие с этими данными через функции в компоненте components/widget/ContactList.vue. 
++ Функции редактирования, создания и удаления в свою очередь напрямую взимодействуют с localStorage
 
-# pnpm
-pnpm build
+Модальные окна работают через отслеживания query параметров в url. Впервые попробовал так сделать и этому есть объяснение - когда модальное окно вызывается через переменную, то при клике на предыдущую страницу модальное окно не закрывается, и страница переключается, что как по мне не очень user friendly. Недавно я такое обнаружил на одном проекте. Но в основном эта схема больше подходит для мобильной версии.
 
-# yarn
-yarn build
+Поиск сделал отдельным компонентом, где прокидываю переменную наверх, потом в ContactList, где просто фильтрую элементы массива по вхождению имени.
 
-# bun
-bun run build
-```
+### Из технологий:
+* ### Nuxt
+* ### CompositionAPI
+* ### TS
+* ### Tailwind
+* ### VueUse
+* ### Maska (маска для инпутов)
 
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Если есть какие-то вопросы или уточнения, радостью на них отвечу.
